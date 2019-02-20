@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel='stylesheet', href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css")
+    script(src='https://code.getmdl.io/1.3.0/material.min.js')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div.contenedor
+      div.cabecera_img
+        img(src='images/tui.png' , alt='Sharing is fine...').img_baner
+      div.cabecera_slogan
+        h3.text_slogan Somos una red social diferente, que une personas diferentes. 
+        p.text_desc Twetter es una red social para la libre expresión del pensamiento, comparte.
+      
+      div.izquierda
+        block content
+      div.derecha
+        block content2
+      div.pie
+        p Sistemas-Operativos-1 @1S-2019 

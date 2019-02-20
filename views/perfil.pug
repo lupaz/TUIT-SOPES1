@@ -1,0 +1,18 @@
+extends base
+
+block content
+  h5.text_subtitle=sub_title
+  div.tuits
+    each tui in twets2
+      span.text_user #{tui.nombre } @#{tui.user}
+      div.contenido 
+        span.text_span #{tui.tweet}
+    
+block content2
+  h5.text_subtitle Información Destacada
+    div.destacada4 
+      h6.text_inf Alias: #{user}
+      h6.text_inf Nombre: #{nombre}
+      h6.text_inf Tweets: #{total_tuits2}
+    div.botton  
+      a.button( href="/" ) Inicio

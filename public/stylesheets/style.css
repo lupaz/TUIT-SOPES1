@@ -1,0 +1,174 @@
+body {
+  padding: 350px;
+  padding-top: 20px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  font-family: 'Comic Sans MS';
+  color: #000000;
+  font-size: 14pt;
+  padding-top: 25px;
+}
+
+.contenedor{
+  background-color:rgba(13, 185, 228, 0.76);
+  border:2px solid rgb(35, 73, 109);
+  height: auto;
+  width: 1000px;
+  padding: 50px;
+}
+
+.cabecera_img{
+  background-color:rgba(255, 255, 255, 0.466);
+  height: 200px;
+  width: 300px;
+  float: left;
+  text-align: center;
+}
+
+.cabecera_slogan{
+  background-color:rgba(255, 255, 255, 0.404);
+  height: 200px;
+  width: 700px;
+  float: right;
+}
+
+.destacada{
+  background-color:rgba(201, 216, 243, 0.438);
+  border:2px solid rgb(35, 107, 129);
+  height: 150px;
+  width: 380px;
+  margin-left: 55px;
+}
+
+.destacada2{
+  background-color:rgba(201, 216, 243, 0.438);
+  border:2px solid rgb(35, 107, 129);
+  height: 100px;
+  width: 380px;
+  margin-left: 55px;
+}
+
+.botton{
+  margin-top: 25px;
+  color: rgb(35, 107, 129);
+}
+
+.destacada3{
+  background-color:rgba(201, 216, 243, 0.438);
+  border:2px solid rgb(35, 107, 129);
+  height: auto;
+  width: 380px;
+  padding: 20px;
+  padding-right: 0px;
+  margin: 25px;
+  margin-left: 45px;
+}
+
+.destacada4{
+  background-color:rgba(201, 216, 243, 0.438);
+  border:2px solid rgb(35, 107, 129);
+  height: 150px;
+  width: 380px;
+}
+
+.destacada5{
+  background-color:rgba(201, 216, 243, 0.438);
+  border:2px solid rgb(35, 107, 129);
+  height: auto;
+  width: 380px;
+  padding: 20px;
+  padding-right: 0px;
+  margin: 10px;
+}
+
+.tuits{
+  background-color:rgba(64, 186, 223, 0.219);
+  border:2px solid rgb(68, 68, 68);
+  height: auto;
+  width: 380px;
+  margin-left: 55px;
+}
+
+.contenido{
+  margin-left: 25px;
+  padding-top: 0px;
+  margin-bottom: 10px;
+  font-family: 'Comic Sans MS';
+  font-size: 12pt;
+  font-style: italic;
+  color: rgb(67, 68, 68);
+  height: auto;
+  width: 350px;
+}
+
+.img_baner{
+  height: 200px;
+  width: 200px;
+}
+
+.text_slogan{
+  padding: 20px;
+  padding-bottom: 0px;
+  text-align: center;
+  font-family: 'Comic Sans MS';
+}
+
+.text_desc{
+  padding-bottom: 15px;
+  text-align: center;
+  font-family: 'Comic Sans MS';
+}
+
+.text_subtitle{
+  font-family: 'Comic Sans MS';
+  margin-left: 75px;
+}
+.text_subtitle2{
+  font-family: 'Comic Sans MS';
+  margin-left: 35px;
+}
+
+.text_inf{
+  margin-left: 25px;
+  margin-top: 18px;
+  font-family: 'Comic Sans MS';
+  font-size: 14pt;
+
+}
+
+.text_user{
+  margin-left: 25px;
+  font-family: 'Comic Sans MS';
+  font-size: 12pt;
+  font-style: oblique;
+  color: rgb(0, 44, 61)
+}
+
+.text_span2{
+  margin-left: 25px;
+  padding-top: 0px;
+  font-family: 'Comic Sans MS';
+  font-size: 12pt;
+  font-style: italic;
+  color: rgb(67, 68, 68)
+}
+
+.izquierda{
+  height:auto;
+  background-color:rgba(241, 243, 247, 0.795);
+  float:left;
+  width:50%;
+}
+.derecha{
+  height:50%;
+  background-color:rgba(153, 153, 153, 0.562);
+  float:right;
+  width:50%;
+}
+.pie{
+  height:20px;
+  background-color:rgba(2, 40, 63, 0.596);
+  clear:both;
+}

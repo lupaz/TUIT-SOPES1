@@ -1,0 +1,32 @@
+extends base
+
+block content
+  h5.text_subtitle=sub_title
+  div.tuits
+    each tui in twets
+      span.text_user #{tui.nombre } @#{tui.user}
+      div.contenido 
+        span.text_span #{tui.tweet}
+
+block content2
+  h5.text_subtitle Información Destacada
+  div.destacada 
+    h6.text_inf Total de usuarios: #{total_users}
+    h6.text_inf Total de tweets: #{total_tuits}
+    h6.text_inf Total de categorias: #{total_cates}
+
+  h5.text_subtitle Actualmente en tendencia:
+  div.destacada2 
+    h6.text_inf Usuario más activo: #{user_mas}
+    h6.text_inf Categoria destacada: #{cater_mas}
+  h5.text_subtitle Consultas:  
+  div.destacada3
+    form(action='/perfil',method='POST')
+      input(type='text', id="user", name='user', value='',placeholder='Buscar Usuarios')
+      input(type='submit', value='Busqueda')
+  div.destacada3        
+    form(action='/categoria',method='POST')
+      input(type='text', name='categoria', id="categoria",value='',placeholder='Buscar Categoria')
+      input(type='submit', value='Busqueda')  
+          
+  
