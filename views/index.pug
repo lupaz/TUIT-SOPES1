@@ -2,5 +2,12 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-  P #{message}
+    #disconected
+      p Desconectado!
+    #connected.hide
+      p Conectado!
+    h2 Has pulsado 0 veces!
+    input(type='button', value='Enviar pulsación')#butons
+    
+    script(src='/javascripts/sock.js')
+      

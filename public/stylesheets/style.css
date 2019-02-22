@@ -172,3 +172,18 @@ a {
   background-color:rgba(2, 40, 63, 0.596);
   clear:both;
 }
+
+#disconected p {
+    color: red;
+    background-color: rgba(200, 0, 0, 0.4);
+
+}
+
+#connected p {
+    color: green;
+    background-color: rgba(0,200,0,0.4);
+}
+
+.hide {
+    display: none;
+}

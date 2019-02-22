@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 //api par la base de datos.
-
+http://localhost:3000/create?usr=Lupaz&nom=Luis Paz&txt=Quisiera leer todos los dias *colegio
 function router_init(db){
 
     var tuits_collection = db.collection('tuits');
@@ -20,6 +20,7 @@ function router_init(db){
     var total_users;
     var user_mas;
     var cater_mas;
+
     var twets=[{user:"yo1",nombre:"luis Paz",tweet:"Hola mundo"},{user:"yo1",nombre:"luis Paz",tweet:"Hola mundo"}];
 
     router.get("/",function(req,res,next){
@@ -29,7 +30,6 @@ function router_init(db){
            function(err,docs){
            if(err) return res.status(404).json({Error:"No se encontro la colección"});
            twets=docs;
-
        });
        //traemos el total de tuits
        tuits_collection.find({}).count(function(err,count){
@@ -42,27 +42,34 @@ function router_init(db){
            total_users=users.length;
            //console.log(total_users);
        });
+
        //traemos el total de categorias
        tuits_collection.aggregate([ { $group: { _id:{ $toLower: "$categoria"}}}]).toArray(function(err,cates){
            //console.log(cates.length);
            total_cates=cates.length;
        });
 
-       //traemos el usuarios con mas tuits
+       //traemos el usuario con mas tuits
        tuits_collection.aggregate([ { $group: { _id:{ $toLower: "$user"}, "count": { $sum: 1 } }},{ $sort:{ count:-1}},{$limit:1}]).toArray(function(err,user){
            //console.log(user[0]._id);
-           user_mas=user[0]._id;
+           if(user.length>0){
+              user_mas=user[0]._id;
+           }
        });
 
        //traemos la categoria con más tuits
        tuits_collection.aggregate([ { $group: { _id:{ $toLower: "$categoria"}, "count": { $sum: 1 } }},{ $sort:{ count:-1}},{$limit:1}]).toArray(function(err,cater){
-           console.log(cater[0]._id);
-           cater_mas=cater[0]._id;
+          // console.log(cater[0]._id);
+          if(cater.length>0){
+              cater_mas=cater[0]._id;
+          }
        });
+
        //return res.json({total:cater_mas});
         setTimeout(function(){
           next();
-        },25);
+        },70);
+
     },function(req,res,next){
         res.render('main', { title: 'Inicio',sub_title:"Ultimos Tweets",total_tuits,total_cates,total_users,user_mas,cater_mas,twets});
     });
@@ -92,6 +99,7 @@ function router_init(db){
     var total_tuits2=0;
     var user="";
     var nombre="";
+
     router.post("/perfil",function(req,res,next){
       var id= req.body.user;
       user=id;
@@ -99,7 +107,9 @@ function router_init(db){
            function(err,docs){
            if(err) return res.status(404).json({Error:"No se encontro la colección"});
            twets2=docs;
-           nombre=docs[0].nombre;
+           if(twets2.length > 0){
+              nombre=docs[0].nombre;
+           }
        });
 
        tuits_collection.find({user:new RegExp('^' +id+ '$', 'i')},{_id:0, nombre:1,tweet:1}).count(function(err,count){
@@ -110,7 +120,7 @@ function router_init(db){
       setTimeout(function() {
              //return res.json({1:total_tuits2,2:user,3:nombre});
              next();
-      },10);
+      },50);
     },function(req,res,next){
       res.render('perfil', { title: 'Perfil',sub_title:"Ultimos Tweets",total_tuits2,user,nombre,twets2});
     });
@@ -133,7 +143,7 @@ function router_init(db){
       setTimeout(function() {
              //return res.json({1:total_tuits2,2:user,3:nombre});
              next();
-      },10);
+      },50);
     },function(req,res,next){
       res.render('categoria', { title: 'Perfil',sub_title:"Ultimos Tweets",total_tuits2,user,nombre,twets2});
     });
