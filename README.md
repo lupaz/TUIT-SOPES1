@@ -7,3 +7,7 @@ Framework: Express JS(Node js)
 DataBase: MongoDB
 
 Conexion en tiempo real con: Socket.io
+
+Docker: Para la creación de contenedores
+
+HAProxy: Para la distribución de carga
